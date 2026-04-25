@@ -1,4 +1,14 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+    site: "https://clickertygaming.github.io",
+    devToolbar: {
+        enabled: false
+    },
+    fonts: [{
+        provider: fontProviders.fontsource(),
+        name: "Roboto",
+        cssVariable: "--font-roboto"
+    }]
+});

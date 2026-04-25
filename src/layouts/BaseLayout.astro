@@ -1,0 +1,72 @@
+---
+const { title } = Astro.props;
+---
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{title}</title>
+        <style>
+            :root {
+                --viewport-size: 100vh;
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: var(--viewport-size);
+                min-height: max-content;
+                font-family: "Roboto", sans-serif;
+            }
+            .header, .footer {
+                z-index: 1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-bottom: 0;
+                padding-top: 0;
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-style: solid;
+                border-color: black;
+                margin: 0;
+                height: 50px;
+            }
+            .header {
+                top: 0;
+                border-width: 0 0 3px 0;
+            }
+            .footer {
+                position: static;
+                display: flex;
+                align-items: center;
+                bottom: 0px;
+                border-width: 3px 0 0 0;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div>
+                <p><a href="/">Home</a></p>
+            </div>
+            <div>
+                <a href="/404">404</a>
+            </div>
+        </div>
+        <div style="z-index: 0; min-height: calc(var(--viewport-size) - 106px); margin-left: 50px; margin-right: 50px; margin-top: 0; margin-bottom: 0; padding: 0; text-align: center; display: flex; flex-direction: column; align-items: center;">
+           <slot /> 
+        </div>
+        <div class="footer">
+            <div>
+                <p>© Clickerty 2026</p>
+            </div>
+            <div>
+                <p>Socials will go here</p>
+            </div>
+        </div>
+    </body>
+</html>
