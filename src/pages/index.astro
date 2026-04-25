@@ -1,5 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/style.css';
 ---
 <BaseLayout title="Clickerty's Stash">
     <div style="display: flex; text-align: center; justify-content: space-evenly; align-items: center; width: 400px;">
@@ -10,4 +11,14 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     <img src="/uuhhh.png" height="150" width="400">
     <p>Come back later, I guess. The website is still a work in progress, anyways.</p>
     <p>In the meantime...</p>
+    <p>You can find me on all these socials (which are also listed in the bottom right corner of every webpage):</p>
+    <div style="display: flex; text-align: center; justify-content: space-around; align-content: space-around; align-items: center; flex-wrap: wrap; width: 400px; height: 80px; text-align: center;">
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/github.com\/ClickertyGaming'">GitHub</button>
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/www.youtube.com\/@clickerty3'">YouTube</button>
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/x.com\/clickerty3'">Twitter (not X)</button>
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/bsky.app/profile/clickerty.bsky.social'">Bluesky</button>
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/tumblr.com'">Tumblr</button>
+        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/clickerty.newgrounds.com'">Newgrounds</button>
+    </div>
+    <p style="font-size:12px; color: gray;">All non-branded art made by me unless specified</p>
 </BaseLayout>
