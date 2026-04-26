@@ -3,24 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import '../styles/style.css';
 ---
 <BaseLayout title="Clickerty">
-    <div style="display: flex; text-align: center; justify-content: space-evenly; align-items: center; width: 400px;">
+    <div style="display: flex; text-align: center; justify-content: space-evenly; align-items: center; width: 340px;">
         <h1>Hi! I'm Clickerty, and I make things online.</h1>
-        <img src="/introductory.png" width="180" height="180" title="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up." alt="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up.">
+        <img src="/introductory.png" width="140" height="140" title="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up." alt="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up.">
     </div>
     <p>Uh... Well, I don't really have any big projects to show off at the moment, so...</p>
-    <img src="/uuhhh.png" height="150" width="400">
+    <img src="/uuhhh.png" height="132" width="340">
     <p>Come back later, I guess. The website is still a work in progress, anyways.</p>
     <p>In the meantime...</p>
     <p>You can find me on all these socials (which are also listed in the bottom right corner of every webpage):</p>
-    <div style="display: flex; text-align: center; justify-content: space-around; align-content: space-around; align-items: center; flex-wrap: wrap; width: 400px; height: 80px; text-align: center;">
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/github.com\/ClickertyGaming'">GitHub</button>
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/www.youtube.com\/@clickerty3'">YouTube</button>
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/x.com\/clickerty3'">Twitter (not X)</button>
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/bsky.app/profile/clickerty.bsky.social'">Bluesky</button>
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/tumblr.com'">Tumblr</button>
-        <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/clickerty.newgrounds.com'">Newgrounds</button>
+    <div style="display: flex; text-align: center; justify-content: space-around; align-content: space-around; align-items: center; flex-wrap: wrap; width: 340px; height: 80px; text-align: center;">
+        <a href="https://github.com/ClickertyGaming"><button class="button" style="min-width:90px;">GitHub</button></a>
+        <a href="https://www.youtube.com/@clickerty3"><button class="button" style="min-width:90px;">YouTube</button></a>
+        <a href="https://x.com/clickerty3"><button class="button" style="min-width:90px;">Twitter (not X)</button></a>
+        <a href="https://bsky.app/profile/clickerty.bsky.social"><button class="button" style="min-width:90px;">Bluesky</button></a>
+        <a href="https://tumblr.com/clickerty"><button class="button" style="min-width:90px;">Tumblr</button></a>
+        <a href="https://clickerty.newgrounds.com"><button class="button" style="min-width:90px;">Newgrounds</button></a>
     </div>
     <p>I am also part of an indie development studio called αlpha.zero which you can check out here:</p>
-    <button class="button" style="min-width:90px;" onclick="window.location.href = 'https:\/\/alphazero-official.github.io'"><img src="/alphazero.svg" width="30" height="30"></button>
+    <a href="https://alphazero-official.github.io"><button class="button" style="min-width:90px;"><img src="/alphazero.svg" width="30" height="30"></button></a>
     <p style="font-size:12px; color: gray;">All non-branded art made by me unless specified. Logos and other branded content belong to their respective owners</p>
 </BaseLayout>

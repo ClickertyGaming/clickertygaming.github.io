@@ -25,10 +25,10 @@ const { title } = Astro.props;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding-left: 1rem;
-                padding-right: 1rem;
                 padding-bottom: 0;
                 padding-top: 0;
+                padding-left: 10px;
+                padding-right: 10px;
                 left: 0;
                 right: 0;
                 background-color: white;
@@ -36,6 +36,7 @@ const { title } = Astro.props;
                 border-color: black;
                 margin: 0;
                 height: 50px;
+                width: calc(100% - 20px);
             }
             .header {
                 top: 0;
@@ -44,10 +45,10 @@ const { title } = Astro.props;
             .footer {
                 position: static;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 bottom: 0px;
                 border-width: 3px 0 0 0;
-                margin: 0;
             }
         </style>
     </head>
@@ -60,7 +61,7 @@ const { title } = Astro.props;
                 <p><a href="/help">Help</a></p>
             </div>
         </div>
-        <div style="z-index: 0; min-height: calc(var(--viewport-size) - 106px); margin-left: 50px; margin-right: 50px; margin-top: 0; margin-bottom: 0; padding: 0; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div style="z-index: 0; min-height: calc(var(--viewport-size) - 157px); min-width:340px; margin-top: 0; margin-bottom: 0; padding: 0; text-align: center; display: flex; flex-direction: column; align-items: center;">
            <slot /> 
         </div>
         <div class="footer">
@@ -68,6 +69,7 @@ const { title } = Astro.props;
                 <p>© Clickerty 2026</p>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: right; align-items: center;">
+                <p>||</p>
                 <a href="https://github.com/ClickertyGaming"><img src="/github.svg" width="42"></a>
                 <p>//</p>
                 <a href="https://www.youtube.com/@clickerty3"><img src="/youtube.png" width="48"></a>
