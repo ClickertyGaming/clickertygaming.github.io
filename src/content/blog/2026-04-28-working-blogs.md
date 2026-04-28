@@ -4,6 +4,7 @@ title: Fully functional blogs!
 author: Clickerty
 tags: Updates
 slug: 2026/04/28/working-blogs
+description: Blogs are now functional!
 important: true
 ---
 As of now, blogs seem to be finally working properly. This is a *big deal*! I can place posts into a specific folder with the correct format and it just works! How cool is that!?

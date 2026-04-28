@@ -1,0 +1,54 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import '../styles/style.css';
+const d = new Date();
+const birthday = new Date("2007-01-17");
+let age = 0;
+if (d.getMonth() >= 0 && d.getDate() >= 17) {
+    age = d.getFullYear() - 2007
+}   else {
+    age = d.getFullYear() - 2008
+}
+---
+<html>
+    <head>
+        <Head title="About" author="Clickerty" description="" />
+    </head>
+    <body>
+        <Header />
+        <div style="z-index: 0; min-height: calc(var(--viewport-size) - 157px); padding: 0 20px;">
+            <h1>About</h1>
+            <hr>
+            <p>My name is Clickerty (generally pronounced /ˈklɪkərti/) (real name currently withheld from public view for the sake of my privacy). As of 2026, I am an IT and Computer Science student planning to major in Game Development (I know, bad idea, but I'd rather pursue something that fulfills me).</p>
+            <p>I was born on the 17th of January, 2007. As of today, I am {age} years old. I was born and raised in Croatia, and my first language is Croatian.</p>
+            <p>
+                I was raised in a Catholic Christian household to be kind and accepting of others, and to not be overly and uselessly judgmental.
+                I am able to discern whether or not something goes against those values, and I'm able to form my own opinions around it.
+                I'm accepting of everyone, no matter their physical attributes.
+            </p>
+            <p>
+                I was born male, although I currently identify with the <i>genderfluid</i> label (use any pronouns, I couldn't care less).
+                I am also neurodiverse and suffer from ADHD and autism; They negatively affect my quality of life significantly, even though they appear completely invisible.
+                There's also some stuff like dysphrasia affecting my ability to speak and construct sentences in speech, but that's not important or severe enough to warrant a mention.
+                I'm white, 186cm (6'1") tall and my favorite colors are blue and purple. I wear thick glasses because my vision is actual dogshit—I can't read anything more than ~30cm (~12") away from my face without my glasses.
+            </p>
+            <p>
+                I do a lot of things and have many hobbies, predominantly creative ones. The only ones I'm particularly good at are programming, music production and writing stories.
+                I'm amateur at best when it comes to the rest, like art, animation, writing lyrics, singing, playing instruments, writing summaries about who I am as a person, etc.
+                There's also a lot of stuff that I want to try doing because I'm sure I'll enjoy it, like learning programs like Blender, improving my singing and doing voice acting,
+                improving my art and animation skills, playing all kinds of instruments, learning new languages, etc.
+            </p>
+            <p>
+                Unfortunately, all of the ones I want to try doing I am currently unable to properly do, be it due to expenses (I grew up low middle-class), not having enough time (university takes a LOT of time
+                away from you), unfavorable circumstances (I live in an apartment building with paper-thin walls) or just not having enough "dedication" or "discipline" (I am unmedicated and executive dysfunction becomes a bigger problem by the day. Organization is a foreign concept to me).
+            </p>
+            <p>
+                If you're curious as to what kind of art or music I make, then... Well, I'd point you primarily to this website, but I haven't implemented anything just yet. I have some stuff up on Newgrounds, but not everything is there.
+                I'll edit this in the future once I implement the art and music archives.
+            </p>
+        </div>
+        <Footer />
+    </body>
+</html>

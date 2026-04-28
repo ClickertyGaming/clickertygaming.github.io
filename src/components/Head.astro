@@ -1,0 +1,16 @@
+---
+const { title, author, description } = Astro.props;
+---
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content={author}>
+<meta name="description" content={description}>
+<meta name="og:description" content={description}>
+<meta name="og:title" content={title}>
+<meta name="og:type" content="blog">
+<meta name="keywords" content="webdev, personal, blog">
+<meta name="theme-color" content="#ffffff">
+<meta name="og:site_name" content="Clickerty">
+<meta name="og:image" content="https://clickertygaming.github.io/uuhhh.png">
+<link rel="alternate" href="rss.xml" type="application/rss+xml" title="Clickerty">
+<title>{title}</title>

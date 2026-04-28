@@ -1,4 +1,5 @@
 ---
+import Head from "../../components/Head.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { Fragment } from "astro/jsx-runtime";
 import '../../styles/style.css';
@@ -11,13 +12,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Clickerty">
-        <meta name="description" content="Clickerty's personal website.">
-        <meta name="keywords" content="webdev, personal, blog">
-        <link rel="alternate" href="rss.xml" type="application/rss+xml" title="Clickerty">
-        <title>Blog</title>
+        <Head title="Blog" author="Clickerty" description="Clickerty's personal blog." />
     </head>
     <body>
         <Header />
@@ -32,6 +27,7 @@ const posts = (await getCollection('blog')).sort(
                             author={post.data.author}
                             id={post.id}
                             important={post.data.important}
+                            description={post.data.description}
                         />
                     ))
                 }
