@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ClickertyGaming/clickertygaming.github.io#readme",
   "dependencies": {
+    "@astrojs/rss": "^4.0.18",
     "astro": "^6.1.9"
   }
 }

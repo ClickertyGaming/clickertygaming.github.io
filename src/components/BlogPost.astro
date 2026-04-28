@@ -1,0 +1,11 @@
+---
+const { title, author, id, important } = Astro.props;
+let id_arr = id.split('/');
+let date_str = id_arr[2] + "/" + id_arr[1] + "/" + id_arr[0];
+let important_str = "";
+if (important == true) {important_str = " - Important"};
+---
+<div class="BlogPostListItem" style="padding: 5px;">
+    <p style="margin-bottom: -15px;">{author} - {date_str}<strong>{important_str}</strong></p>
+    <h2><a href={"/blog/" + id}>{title}</a></h2>
+</div>
