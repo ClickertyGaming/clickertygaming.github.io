@@ -10,4 +10,4 @@ As of now, blogs seem to be finally working properly. This is a *big deal*! I ca
 
 They are sorted based on how recent each post is, so the most recent post is at the top. It took me a couple days of bashing my head against a wall and cursing out half of Heaven to figure everything out, but I managed to do it.
 
-At the moment of writing this, there are 2 blog posts that exist on the site — the first one and this one, both written during production before blogs were officially published. I also hope to implement RSS feeds, even though I genuinely have no fuckin' idea how they work.
+At the moment of writing this, there are 2 blog posts that exist on the site — the first one and this one, both written during production before blogs were officially published. Alongside blogs, I also managed to implement an RSS feed if that's something you fancy.
