@@ -1,11 +1,10 @@
 ---
 const { title, author, tags, description, id, important } = Astro.props;
-import '../styles/style.css';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Head from '../components/Head.astro';
 let url_array = id.split('/');
-let url_str = url_array[2] + "/" + url_array[1] + "/" + url_array[0];
+let url_str = new Date(Date.UTC(parseInt(url_array[0]), parseInt(url_array[1])-1, parseInt(url_array[2]), 0, 0, 0, 0)).toLocaleString(navigator.languages, { dateStyle: "short" });
 let important_str = "";
 if (important == true) {important_str = " | Important"};
 ---
@@ -15,8 +14,8 @@ if (important == true) {important_str = " | Important"};
     </head>
     <body>
         <Header />
-        <div style="padding: 0 20px;  min-height: calc(var(--viewport-size) - 178px);">
-            <p><a href="/blog">{"<- Back"}</a></p>
+        <div style="padding: 0 20px;  min-height: calc(100vh - 178px);">
+            <p><a href="/blog">{" Back"}</a></p>
             <h1>{title}</h1>
             <p>{author} | {url_str}{important_str}</p>
             <p>- {tags}</p>

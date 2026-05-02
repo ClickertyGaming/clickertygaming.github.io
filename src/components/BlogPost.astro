@@ -1,12 +1,12 @@
 ---
 const { title, author, id, description, important } = Astro.props;
 let id_arr = id.split('/');
-let date_str = id_arr[2] + "/" + id_arr[1] + "/" + id_arr[0];
+let date_str = new Date(Date.UTC(parseInt(id_arr[0]), parseInt(id_arr[1])-1, parseInt(id_arr[2]), 0, 0, 0, 0)).toLocaleString(navigator.languages, { dateStyle: "short" });
 let important_str = "";
-if (important == true) {important_str = " - Important"};
+if (important == true) {important_str = "Important"};
 ---
 <div class="BlogPostListItem" style="padding: 5px;">
-    <p style="margin-bottom: -15px;">{author} - {date_str}<strong>{important_str}</strong></p>
+    <p style="margin-bottom: -15px;">{author} | {date_str}{important && <span> | </span>}<strong>{important_str}</strong></p>
     <h2><a href={"/blog/" + id}>{title}</a></h2>
     <p style="margin-top: -15px;">{description}</p>
 </div>

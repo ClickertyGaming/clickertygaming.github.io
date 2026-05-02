@@ -1,9 +1,9 @@
 ---
 const { title, author, description } = Astro.props;
-import '../styles/style.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Head from '../components/Head.astro';
+import Theme from '../components/Theme.astro';
 ---
 <html>
     <head>
@@ -11,7 +11,7 @@ import Head from '../components/Head.astro';
     </head>
     <body>
         <Header />
-        <div style="z-index: 0; min-height: calc(var(--viewport-size) - 157px); min-width:340px; margin-top: 0; margin-bottom: 0; padding: 0; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div style="z-index: 0; min-height: calc(100vh - 157px); min-width:340px; margin-top: 0; margin-bottom: 0; padding: 0; text-align: center; display: flex; flex-direction: column; align-items: center;">
            <slot /> 
         </div>
         <Footer />

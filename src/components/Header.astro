@@ -1,3 +1,6 @@
+---
+import Theme from './Theme.astro';
+---
 <div class="header" style="z-index: 1;
                 display: flex;
                 justify-content: space-between;
@@ -8,14 +11,23 @@
                 padding-right: 10px;
                 left: 0;
                 right: 0;
-                background-color: white;
+                background-color: color: if(
+                    style(--dark-mode: 1): black;
+                    else: white;
+                );
                 border-style: solid;
-                border-color: black;
+                border-color: color: if(
+                    style(--dark-mode: 1): white;
+                    else: black;
+                );;
                 margin: 0;
                 height: 50px;
                 width: calc(100% - 20px);
                 top: 0;
                 border-width: 0 0 3px 0;">
+    <div>
+        <Theme />
+    </div>
     <div>
         <p><a href="/">Home</a></p>
     </div>

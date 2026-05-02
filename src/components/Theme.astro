@@ -1,0 +1,143 @@
+---
+---
+<style is:global>
+    :root {
+        --color-bg: #444;
+        --text-color: #444;
+        --button-color-bg: #444;
+        --button-hover-bg: #444;
+        --inverted: invert(50%);
+    }
+    [data-theme="light"] {
+        --color-bg: #ffffff;
+        --text-color: #000000;
+        --button-color-bg: #bcbcbc;
+        --button-hover-bg: #515151;
+        --inverted: invert(0%);
+    }
+    [data-theme="dark"] {
+        --color-bg: #000000;
+        --text-color: #ffffff;
+        --button-color-bg: #1e1e1e;
+        --button-hover-bg: #bdbdbd;
+        --inverted: invert(100%);
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        min-height: max-content;
+        font-family: "Roboto", sans-serif;
+        color: var(--text-color);
+        background-color: var(--color-bg);
+    }
+
+    .button {
+        background-color: var(--button-color-bg);
+        color: var(--text-color);
+        border: 2px var(--text-color) solid;
+        padding: 6px 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition-duration: 0.25s;
+    }
+
+    .button:hover {
+        background-color: var(--button-hover-bg);
+        color: var(--color-bg);
+    }
+ 
+    .invert {
+        filter: var(--inverted);
+    }
+
+    a:link, a:visited {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    a:hover, a:active {
+        color: var(--text-color);
+        text-decoration: underline;
+    }
+
+    .theme-checkbox {
+        display: none;
+    }
+
+    .theme-checkbox + label {
+        background: url('/sun.svg') no-repeat 0 center;
+        background-size: cover;
+        height: 28px;
+        width: 28px;
+        display: inline-block;
+        padding: 0;
+        cursor: pointer;
+        filter: var(--inverted);
+    }
+
+    .theme-checkbox:checked + label {
+        background: url('/moon.svg') no-repeat 0 center;
+        background-size: cover;
+        height: 28px;
+        width: 28px;
+        display: inline-block;
+        padding: 0;
+        cursor: pointer;
+        filter: var(--inverted);
+    }
+</style>
+<input type="checkbox" class="theme-checkbox" id="theme1">
+<label for="theme1"></label>    
+<script>
+    const themeToggle = document.querySelector('.theme-checkbox');
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+        if (currentTheme === "dark") {
+            themeToggle.checked = true;
+        }
+    }
+
+    themeToggle?.addEventListener("change", (e) => {
+        if (e.target.checked) {
+            console.log("dark");
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            console.log("light");
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        }
+        console.log(localStorage.getItem("theme"));
+    })
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie(cname) {
+        let mode = getCookie(cname);
+        return mode == '1' || mode == '0';
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+</script>

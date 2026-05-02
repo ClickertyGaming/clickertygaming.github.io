@@ -1,3 +1,5 @@
+---
+---
 <div class="footer" style="z-index: 1;
                 display: flex;
                 justify-content: space-between;
@@ -8,9 +10,15 @@
                 padding-right: 10px;
                 left: 0;
                 right: 0;
-                background-color: white;
                 border-style: solid;
-                border-color: black;
+                background-color: color: if(
+                    style(--dark-mode: 1): black;
+                    else: white;
+                );
+                border-color: color: if(
+                    style(--dark-mode: 1): white;
+                    else: black;
+                );
                 margin: 0;
                 height: 50px;
                 width: calc(100% - 20px);
@@ -23,19 +31,19 @@
     </div>
         <div style="display: flex; flex-direction: row; justify-content: right; align-items: center;">
         <p>||</p>
-        <a href="https://github.com/ClickertyGaming"><img src="/github.svg" width="32"></a>
+        <a href="https://github.com/ClickertyGaming"><img src="/github.svg" width="32" class="invert"></a>
         <p>//</p>
-        <a href="https://www.youtube.com/@clickerty3"><img src="/youtube.png" width="40"></a>
+        <a href="https://www.youtube.com/@clickerty3"><img src="/youtube.png" width="40" class="invert"></a>
         <p>//</p>
-        <a href="https://x.com/clickerty3"><img src="/twitter.svg" width="28" style="padding-left: 5px; padding-right: 5px;"></a>
+        <a href="https://x.com/clickerty3"><img src="/twitter.svg" width="28" style="padding-left: 5px; padding-right: 5px;" class="invert"></a>
         <p>//</p>
-        <a href="https://bsky.app/profile/clickerty.bsky.social"><img src="/bluesky.svg" height="22" style="padding-left: 10px; padding-right: 10px;"></a>
+        <a href="https://bsky.app/profile/clickerty.bsky.social"><img src="/bluesky.svg" height="22" style="padding-left: 10px; padding-right: 10px;" class="invert"></a>
         <p>//</p>
-        <a href="https://tumblr.com/clickerty"><img src="/tumblr.png" height="22" style="padding-left: 10px; padding-right: 10px;"></a>
+        <a href="https://tumblr.com/clickerty"><img src="/tumblr.png" height="22" style="padding-left: 10px; padding-right: 10px;" class="invert"></a>
         <p>//</p>
-        <a href="https://clickerty.newgrounds.com"><img src="/newgrounds.png" width="32" style="padding-left: 5px; padding-right: 5px;"></a>
+        <a href="https://clickerty.newgrounds.com"><img src="/newgrounds.png" width="32" style="padding-left: 5px; padding-right: 5px;" class="invert"></a>
         <p>//</p>
-        <a href="https://clickertygaming.github.io/feed.xml"><img src="/rss.svg" width="22" style="padding: 0 5px;"></a>
+        <a href="https://clickertygaming.github.io/feed.xml"><img src="/rss.svg" width="22" style="padding: 0 5px;" class="invert"></a>
         <p>||</p>
     </div>
 </div>
