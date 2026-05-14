@@ -11,28 +11,19 @@ import Theme from './Theme.astro';
                 padding-right: 10px;
                 left: 0;
                 right: 0;
-                background-color: color: if(
-                    style(--dark-mode: 1): black;
-                    else: white;
-                );
                 border-style: solid;
-                border-color: color: if(
-                    style(--dark-mode: 1): white;
-                    else: black;
-                );;
                 margin: 0;
                 height: 50px;
                 width: calc(100% - 20px);
                 top: 0;
                 border-width: 0 0 3px 0;">
-    <div>
+    <div style="width: 33%;">
         <Theme />
     </div>
-    <div>
-        <p><a href="/">Home</a></p>
-    </div>
-    <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; align-content: center;">
+    <div style="width: 33%; display: flex; flex-direction: row; justify-content: right; align-items: center; align-content: center;">
+        <p style="padding: 0 5px;"><a href="/">Home</a></p>
         <p style="padding: 0 5px;"><a href="/about">About</a></p>
+        <p style="padding: 0 5px;"><a href="/socials">Socials</a></p>
         <p style="padding: 0 5px;"><a href="/blog">Blog</a></p>
         <p style="padding: 0 5px;"><a href="/help">Help</a></p>
     </div>
