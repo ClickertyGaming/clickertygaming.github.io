@@ -1,0 +1,45 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Head from "../../components/Head.astro";
+import MusicEntry from "../../components/MusicEntry.astro";
+import { getCollection } from "astro:content";
+const songs = (await getCollection('music')).sort(
+    (a, b) => ('' + b.id).localeCompare(a.id)
+);
+---
+<html>
+    <head>
+        <Head title="Music Archive" author="Clickerty" description="Clickerty's music archive." />
+    </head>
+    <body>
+        <Header />
+        <div style="padding: 0 20px;  min-height: calc(100vh - 229px);">
+            <h1>Music</h1>
+            <hr>
+            <p>The catalog of all music released by me that I deem important enough to list here. Click a release's name to go to its webpage.</p>
+            <div style="padding: 20px;">
+                <!--
+                <MusicEntry title="Title" creator="Clickerty" year="2026" genre="idfk" length="2:14" id="2" type="single" cover="/uuhhh.png" />
+                <MusicEntry title="Title" creator="Clickerty" year="2026" genre="idfk" length="2:14" id="1" type="single" cover="/uuhhh.png" />
+                -->
+                {
+                    songs.map((song) => (
+                        <MusicEntry
+                            title={song.data.title}
+                            creator={song.data.creator}
+                            year={song.data.year}
+                            genre={song.data.genre}
+                            length={song.data.length}
+                            id={song.data.id}
+                            type={song.data.type}
+                            cover={song.data.cover}
+                            url={song.data.url}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+        <Footer />
+    </body>
+</html>

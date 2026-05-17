@@ -1,6 +1,40 @@
 ---
 import Theme from './Theme.astro';
 ---
+<style is:global>
+    :root {
+        --header-display: none;
+    }
+    [header-display="0"] {
+        --header-display: none;
+    }
+    [header-display="1"] {
+        --header-display: flex;
+    }
+    .menu-checkbox {
+        display: none;
+    }
+    .menu-checkbox + label {
+        background: url('/icons/arrowdown.svg') no-repeat 0 center;
+        background-size: cover;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        padding: 0;
+        cursor: pointer;
+        filter: var(--inverted);
+    }
+    .menu-checkbox:checked + label {
+        background: url('/icons/arrowup.svg') no-repeat 0 center;
+        background-size: cover;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        padding: 0;
+        cursor: pointer;
+        filter: var(--inverted);
+    }
+</style>
 <div class="header" style="z-index: 1;
                 display: flex;
                 justify-content: space-between;
@@ -14,17 +48,50 @@ import Theme from './Theme.astro';
                 border-style: solid;
                 margin: 0;
                 height: 50px;
-                width: calc(100% - 20px);
+                width 100%;
                 top: 0;
                 border-width: 0 0 3px 0;">
     <div style="width: 33%;">
         <Theme />
     </div>
-    <div style="width: 33%; display: flex; flex-direction: row; justify-content: right; align-items: center; align-content: center;">
-        <p style="padding: 0 5px;"><a href="/">Home</a></p>
-        <p style="padding: 0 5px;"><a href="/about">About</a></p>
-        <p style="padding: 0 5px;"><a href="/socials">Socials</a></p>
-        <p style="padding: 0 5px;"><a href="/blog">Blog</a></p>
-        <p style="padding: 0 5px;"><a href="/help">Help</a></p>
+    <div style="width: 33%; display: flex; justify-content: right;">
+        <input type="checkbox" class="menu-checkbox" id="checkbox2">
+        <label for="checkbox2"></label>
     </div>
 </div>
+<div class="header-collapse" style="z-index: 1;
+                display: var(--header-display);
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 0;
+                padding-top: 0;
+                padding-left: 10px;
+                padding-right: 10px;
+                left: 0;
+                right: 0;
+                border-style: solid;
+                margin: 0;
+                height: 40px;
+                width: calc(100%-20px);
+                top: 0;
+                border-width: 0 0 3px 0;">
+    <div style="width: 100%; display: flex; flex-direction: row; justify-content: right; align-items: center; align-content: center;">
+        <p style="padding: 0 2px;"><a href="/">Home</a></p>
+        <p style="padding: 0 2px;"><a href="/about">About</a></p>
+        <p style="padding: 0 2px;"><a href="/socials">Socials</a></p>
+        <p style="padding: 0 2px;"><a href="/music">Music</a></p>
+        <p style="padding: 0 2px;"><a href="/blog">Blog</a></p>
+        <p style="padding: 0 2px;"><a href="/help">Help</a></p>
+    </div>
+</div>
+<script>
+    const headerToggle = document.querySelector('.menu-checkbox');
+    headerToggle.checked = false;
+    headerToggle?.addEventListener("change", (e) => {
+        if (e.target.checked) {
+            document.documentElement.setAttribute("header-display", "1");
+        } else {
+            document.documentElement.setAttribute("header-display", "0");
+        }
+    })
+</script>

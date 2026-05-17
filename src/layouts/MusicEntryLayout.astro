@@ -1,0 +1,27 @@
+---
+const {title, creator, length, genre, cover, type, id, year} = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+let coverDisplay = "display: block;";
+if (cover === "") {coverDisplay = "display: none;"}
+---
+<html>
+    <head>
+        <Head title={title} author={creator} description=""/>
+    </head>
+    <body>
+        <Header />
+        <div style="padding: 0 20px; min-height: calc(100vh - 224px);">
+            <p><a href="/music">{"\u{2190} Back"}</a></p>
+            <h1>{title} - {creator} ({year}.)</h1>
+            <p>{type} | #{id} | {genre} | {length}</p>
+            <hr>
+            <img src={cover} style={coverDisplay+"margin-left: auto; margin-right:auto; border: 4px double var(--text-color); width:200px; height: 200px;"}>
+            <div style="padding: 0 10px;">
+                <slot/>
+            </div>
+        </div>
+        <Footer />
+    </body>
+</html>

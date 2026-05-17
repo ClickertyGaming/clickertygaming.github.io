@@ -1,0 +1,69 @@
+---
+const { title, creator, year, genre, length, id, type, cover, url } = Astro.props;
+let coverDisplay = "display: block;";
+let coverMargin = "-40px";
+let padding = "0 5px 0 0;"
+if (cover === "") {coverDisplay = "display: none;"; coverMargin = "0px;"; padding = "0 15px;"};
+---
+<style define:vars={{ coverMargin, padding }}>
+    .MusicEntryItem {
+        padding: 5px;
+        border: 4px double var(--text-color);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        max-height: 144px;
+    }
+    .MusicEntryItemDiv, .MusicEntryCoverDiv {
+        line-height: 1;
+        padding: 0 10px 0 0;
+        max-height: 144px;
+    }
+    .MusicEntryCover {
+        width: 128px;
+        height: 128px;
+        padding: 0 5px;
+        border: 2px solid var(--text-color);
+    }
+    @media screen and (max-width: 550px) {
+        .MusicEntryItem {
+            flex-direction: column;
+            align-items: flex-start;
+            max-height: 600px;
+            min-height: 144px;
+        }
+        .MusicEntryItemDiv {
+            padding: 0 15px 0 10px;
+            max-height: 400px;
+        }
+        .MusicEntryCoverDiv {
+            max-height: 400px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--coverMargin);
+        }
+        .MusicEntryCover {
+            offset-position: left -40px;
+        }
+    }
+    @media screen and (max-width: 440px) {
+        .MusicEntryCoverDiv {
+            margin-bottom: 0px;
+        }
+    }
+</style>
+<div style="padding: 10px;">
+    <div class="MusicEntryItem">
+        <div class="MusicEntryCoverDiv">
+            <img class="MusicEntryCover" src={cover} style={coverDisplay}>
+        </div>
+        <div class="MusicEntryItemDiv">
+            <p>#{id} | {year}.</p>
+            <p><a href={"/music/"+id+"/"+url}><b>{title}</b></a></p>
+            <p>{creator}</p>
+            <p>{type} | {genre} | {length}</p>
+        </div>
+    </div>
+</div>
