@@ -35,6 +35,7 @@ const songs = (await getCollection('music')).sort(
                             type={song.data.type}
                             cover={song.data.cover}
                             url={song.data.url}
+                            hidden={song.data.hidden}
                         />
                     ))
                 }

@@ -1,15 +1,17 @@
 ---
-const { title, creator, year, genre, length, id, type, cover, url } = Astro.props;
+const { title, creator, year, genre, length, id, type, cover, url, hidden } = Astro.props;
+let visible = "flex";
 let coverDisplay = "display: block;";
 let coverMargin = "-40px";
 let padding = "0 5px 0 0;"
 if (cover === "") {coverDisplay = "display: none;"; coverMargin = "0px;"; padding = "0 15px;"};
+if (hidden === true) {visible = "none"};
 ---
-<style define:vars={{ coverMargin, padding }}>
+<style define:vars={{ coverMargin, padding, visible }}>
     .MusicEntryItem {
         padding: 5px;
         border: 4px double var(--text-color);
-        display: flex;
+        display: var(--visible);
         justify-content: flex-start;
         align-items: center;
         flex-direction: row;
