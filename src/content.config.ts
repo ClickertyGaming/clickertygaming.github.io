@@ -23,7 +23,8 @@ const music = defineCollection({
         type: z.string(),
         cover: z.string().default(""),
         id: z.number(),
-        url: z.string()
+        url: z.string(),
+        hidden: z.boolean().default(false)
     })
 });
 export const collections = { blog, music };
