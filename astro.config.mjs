@@ -1,7 +1,5 @@
 import { defineConfig, fontProviders } from "astro/config";
 
-import db from "@astrojs/db";
-
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -15,7 +13,5 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Roboto",
       cssVariable: "--font-roboto"
-  }],
-
-  integrations: [db()]
+  }]
 });
