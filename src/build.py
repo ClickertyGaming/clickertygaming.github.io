@@ -11,7 +11,7 @@ total_size = 0
 for i in list:
     total_size = total_size + os.path.getsize("public/music/"+i)
 total_size = convert_size(total_size)
-file = open("src/pages/music/index/index.astro", "w")
+file = open("src/pages/music/indexed/index.astro", "w")
 file.writelines([
     "---\n",
     "import Head from \"../../../components/Head.astro\";\n",
