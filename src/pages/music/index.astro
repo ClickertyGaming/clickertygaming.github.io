@@ -18,11 +18,8 @@ const songs = (await getCollection('music')).sort(
             <h1>Music</h1>
             <hr>
             <p>The catalog of all music released by me that I deem important enough to list here. Click a release's name to go to its webpage.</p>
+            <p><a href="/music/index">Music Index</a></p>
             <div style="padding: 20px;">
-                <!--
-                <MusicEntry title="Title" creator="Clickerty" year="2026" genre="idfk" length="2:14" id="2" type="single" cover="/uuhhh.png" />
-                <MusicEntry title="Title" creator="Clickerty" year="2026" genre="idfk" length="2:14" id="1" type="single" cover="/uuhhh.png" />
-                -->
                 {
                     songs.map((song) => (
                         <MusicEntry

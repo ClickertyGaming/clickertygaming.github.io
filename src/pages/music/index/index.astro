@@ -1,0 +1,29 @@
+---
+import Head from "../../../components/Head.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+---
+<html>
+   <head>
+       <Head title="Music Index" author="Clickerty" />
+   </head>
+   <body>
+       <style>.indexWarning { display: none; } @media screen and (max-width: 636px) { .indexWarning { display:block; } }</style>       <Header />
+       <div style="padding: 0 20px; min-height: calc(100vh - 229px);">
+           <h1>Music Index</h1>
+           <p><a href="/music">{"\u{2190} Back"}</a></p>           <p>Files: 5</p>
+           <p>Total size: 50.13 MB</p>
+            <p class="indexWarning">Your device is too thin, so the table probably isn't rendering too well. Try turning it into landscape mode, if possible.</p>           <div style="padding-bottom: 30px;">
+               <table style="padding: 0 20px; width: 100%;">
+                   <tr><th style="width: 50%">Name</th><th>Modified</th><th>Size</th></tr>
+                    <tr><td style="text-align: left; padding: 0 10px; word-wrap: break-word; word-break: break-all;"><a href="/music/Clutterswing.flac" style="word-wrap: break-word; display: block;">Clutterswing.flac</a></td><td>Sat May 30 11:26:55 2026</td><td>33.00 MB</td></tr>
+                    <tr><td style="text-align: left; padding: 0 10px; word-wrap: break-word; word-break: break-all;"><a href="/music/Clutterswing.mp3" style="word-wrap: break-word; display: block;">Clutterswing.mp3</a></td><td>Sat May 16 18:22:03 2026</td><td>6.05 MB</td></tr>
+                    <tr><td style="text-align: left; padding: 0 10px; word-wrap: break-word; word-break: break-all;"><a href="/music/Clutterswing_(Playable).flac" style="word-wrap: break-word; display: block;">Clutterswing_(Playable).flac</a></td><td>Sat May 30 11:26:55 2026</td><td>8.88 MB</td></tr>
+                    <tr><td style="text-align: left; padding: 0 10px; word-wrap: break-word; word-break: break-all;"><a href="/music/Clutterswing_(Playable).mp3" style="word-wrap: break-word; display: block;">Clutterswing_(Playable).mp3</a></td><td>Sat May 30 11:26:55 2026</td><td>2.11 MB</td></tr>
+                    <tr><td style="text-align: left; padding: 0 10px; word-wrap: break-word; word-break: break-all;"><a href="/music/Clutterswing_(Playable).pdf" style="word-wrap: break-word; display: block;">Clutterswing_(Playable).pdf</a></td><td>Sat May 30 11:26:55 2026</td><td>85.01 KB</td></tr>
+               </table>
+           </div>
+       </div>
+       <Footer />
+   </body>
+</html>
