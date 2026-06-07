@@ -1,7 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const splashMessages = [
+    "this is a splash message",
+    "still can't get a server of my own",
+    "i desperately need to get a box to scream in",
+    "Also try Minecraft!",
+    "Also try Terraria!",
+    "Also try ULTRAKILL!",
+    "i forgor 💀",
+    "i'm open to ideas for more of these btw",
+    " ",
+    "homestuck? yeah, to the ground",
+    "HEY      EVERY      !!",
+    "Remember to stack cleaner and faster!",
+    "google en passant",
+    "holy hell",
+    "i love refrigerators",
+    "love this aminals.                      the                            .",
+    "shoutouts to simpleflips",
+    "g",
+    "h",
+    "[[BIG SHOT!!!!!]]",
+    "yeah i'd like to solve the puzzle",
+    "road work ahead? uh, yeah, i sure hope it does",
+    "chefs kiss? do... do they really?",
+    "the bird flu? yeah, they tend to do that",
+    "you're telling me a shrimp fried this rice?",
+    "what's upstairs? they can't talk",
+    "based? based on what?",
+    "apartment \"complex\"? i find it quite simple",
+    "wood fired pizza? how's pizza gonna get a job now?",
+    "you're telling me a ginger bred this man?",
+    "MEET LOCAL SINGLES STRAIGHT FROM [My]",
+    "MY EYES ARE [[Burning]] LIKE [[DVDs of ANY movie at Half-pr1ce!]]",
+    "crazy?",
+    "DEALS SO GOOD I'LL [$!$$] MYSELF!",
+    "[[Designed BY The Classics You've Come To Expect! (C)1997]]",
+    "[[Amazed at thi5 amazing transformation? You too can]] HAVE A [[Communion]] WITH [[Unintelligible Laughter]]",
+    "I CAN FEEL THAT [Smooth Taste] ALREADY!!",
+    "THE [@$@!] TASTE OF SPAMTON",
+    "WAIT!! [$!?!] THE PRESSES!",
+    "WHAT! THE! [Fifty Percent Off]!?",
+    "It's you!",
+    "Despite everything, it's still you.",
+    "this message could very easily have a 0.1% chance of appearing. and you would be able to know because the source code is literally right there. just gotta know where to look",
+    "executive dysfunction can kiss my ass",
+    "Hi, I'm Clickerty! Did you know you have rights?",
+    "<img src=\"/uuhhh.png\" height=\"16\" width=\"300\" class=\"invert\">"
+];
+let message = splashMessages[Math.floor(Math.random() * splashMessages.length)];
 ---
 <BaseLayout title="Clickerty" author="Clickerty", description="Clickerty's personal website.">
+    <span style="font-size:12px; margin-top: 10px; margin-bottom: 0px; white-space: pre-wrap;">{message}</span>
     <div style="display: flex; text-align: center; justify-content: space-evenly; align-items: center; width: 300px;">
         <h1>Hi! I'm Clickerty, and I make things online.</h1>
         <img src="/introductory.png" width="100" height="100" title="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up." alt="A drawing of Clickerty (me) with an arrow pointing to me with the text \'that' me\' made in MS Paint. The drawing is horribly jumbled up." class="invert">
