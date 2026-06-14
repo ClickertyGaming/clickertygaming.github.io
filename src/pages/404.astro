@@ -1,12 +1,15 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="404" author="Clickerty" description="404">
     <h1>404 Not Found</h1>
     <p style="white-space: pre-wrap; padding: 0 20px;" id="errorMessage"></p>
     <img src="/404.png" width="285" height="189" class="invert">
+    <a id="up" href="/"><button class="button" style="min-width:90px;">↑ Go Up</button></a>
 </BaseLayout>
 <script>
+    let url = window.location.pathname.split('/');
+    for (let i = 1; i < url.length-2; i++) {document.getElementById("up").href += url[i] + "/";};
     const errorMessages = [
         "[[Hyperlink Blocked]].",
         "Sorry about that.",
@@ -23,7 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
         "Too early for this page, man.",
         "ooho no nonono miss we can NOT add that",
         "well since you're here you can listen to my music! only at    for free!",
-        "Take a moment to reflect on your circumstances. What did you do that led you here? What is the meaning of this page, or the one you thought you were able to access? Is it really worth it to try accessing whatever false memory led you here? The cosmos cares for none, as such shallow concepts like morale matter not in the vast emptiness. Embrace the void, laugh at your silly mistake, and move on. Keep on with your business, continue browsing the internet whose expanses you think of as vast. Find the things that make you laugh, and live your life out with as much carelessness as it can allow you. Attaching yourself to far too many things is detrimental to one's mental state; Caring about too much, ironically, only makes you care less in the future. So let loose, and continue searching for whatever silly material you seek. I shall not blame you for it, as I, too, am moulded from the same bowl as the rest of us.\n\nOr something like that.",
+        "Take a moment to reflect on your circumstances. What did you do that led you here? What is the meaning of this page, or the one you thought you were able to access? Is it really worth it to try accessing whatever false memory led you here? The cosmos cares for none, as such shallow concepts like morale matter not in the vast emptiness. Embrace the void, laugh at your silly mistake, and move on. Keep on with your business, continue browsing the internet whose expanses you think of as vast. Find the things that make you laugh, and live your life out with as much carelessness as it can allow you. Attaching yourself to far too many things is detrimental to one's mental state; Caring about too much, ironically, only makes you care less in the future. So let loose, and continue searching for whatever silly material you seek. I shall not blame you for it, as I, too, am molded from the same bowl as the rest of us.\n\nOr something like that.",
         "dude ok so many of these are stolen",
         "how in the hell did you even get here",
         "beta.one",
