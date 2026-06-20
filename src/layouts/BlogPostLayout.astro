@@ -17,10 +17,10 @@ if (important == true) {important_str = " | Important"};
         <div style="padding: 0 20px;  min-height: calc(100vh - 224px);">
             <p><a href="/blog">{"\u{2190} Back"}</a></p>
             <h1>{title}</h1>
-            <p>{author} | {url_str}{important_str}</p>
-            <p>- {tags}</p>
+            <p>{description}</p>
+            <p>{author} | {url_str}{important_str} | - {tags}</p>
             <hr>
-            <div>
+            <div style="padding: 0 10px;">
                 <slot />
             </div>
         </div>
