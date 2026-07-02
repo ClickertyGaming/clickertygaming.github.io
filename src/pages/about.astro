@@ -2,14 +2,6 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Head from "../components/Head.astro";
-const d = new Date();
-const birthday = new Date("2007-01-17");
-let age = 0;
-if (d.getMonth() >= birthday.getMonth() && d.getDate() >= birthday.getDate()) {
-    age = d.getFullYear() - birthday.getFullYear();
-} else {
-    age = d.getFullYear() - birthday.getFullYear();
-}
 ---
 <html>
     <head>
@@ -23,7 +15,7 @@ if (d.getMonth() >= birthday.getMonth() && d.getDate() >= birthday.getDate()) {
             <p>
                 My name is Clickerty (generally pronounced /ˈklɪkərti/) (real name currently withheld from public view for the sake of my privacy).
                 As of 2026, I am an IT and Computer Science student planning to major in Game Development (I know, bad idea, but I'd rather pursue something that fulfills me).</p>
-            <p>I was born on the 17th of January, 2007. As of today, I am {age} years old. I was born and raised in Croatia, and my first language is Croatian.</p>
+            <p id="age">I was born on the 17th of January, 2007. As of today, I am age years old. I was born and raised in Croatia, and my first language is Croatian.</p>
             <p>
                 I was raised in a Catholic Christian household to be kind and accepting of others, and to not be overly and uselessly judgmental.
                 I am able to discern whether or not something goes against those values, and I'm able to form my own opinions around it.
@@ -51,5 +43,16 @@ if (d.getMonth() >= birthday.getMonth() && d.getDate() >= birthday.getDate()) {
             </p>
         </div>
         <Footer />
+        <script>
+            const d = new Date();
+            const birthday = new Date("2007-01-17");
+            let age = 0;
+            if (d.getMonth() >= birthday.getMonth() && d.getDate() >= birthday.getDate()) {
+                age = d.getFullYear() - birthday.getFullYear();
+            } else {
+                age = d.getFullYear() - birthday.getFullYear();
+            }
+            document.getElementById("age").textContent = "I was born on the 17th of January, 2007. As of today, I am "+age.toString()+" years old. I was born and raised in Croatia, and my first language is Croatian.";
+        </script>
     </body>
 </html>
