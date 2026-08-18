@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h1>404 Not Found</h1>
     <p style="white-space: pre-wrap; padding: 0 20px;" id="errorMessage"></p>
     <img src="/404.png" width="285" height="189" class="invert">
-    <a id="up" href="/"><button class="button" style="min-width:90px;">↑ Go Up</button></a>
+    <a id="up" href="/"><button class="button" style="min-width:90px; margin-bottom: 20px;">↑ Go Up</button></a>
 </BaseLayout>
 <script>
     let url = window.location.pathname.split('/');
@@ -37,7 +37,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         "WHAT!? YOU WERE SO CLOSE!",
         "TOO MANY EXCESS VACATION DAYS?? TAKE A GOD DAMN VACATION STRAIGHT TO HELL",
         "[Attention Customers! Clean up on Aisle 3!]",
-        "... but nobody came."
+        "... but nobody came.",
+        "GOD",
+        "DAMMIT",
     ];
     document.getElementById("errorMessage").innerHTML = errorMessages[Math.floor(Math.random() * errorMessages.length)]
 </script>
