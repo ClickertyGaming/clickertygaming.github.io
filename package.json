@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ClickertyGaming/clickertygaming.github.io#readme",
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.2.3",
+    "astro": "^7.3.2",
     "present": "^1.0.0",
     "scripts": "^0.1.0"
   },
